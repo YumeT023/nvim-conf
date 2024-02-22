@@ -4,7 +4,8 @@ runner.setup {
   mode = "float",
   filetype = {
     typescript = "tsx",
-    javascript = "tsx"
+    javascript = "tsx",
+    asm = "nasm"
   },
   float = {
     title = "runner",

@@ -130,7 +130,7 @@ _G.packer_plugins = {
     url = "https://github.com/VonHeikemen/lsp-zero.nvim"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\n�\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\tleft\n • \nright\n • \25component_separators\1\0\2\tleft\b < \nright\b > \1\0\1\18icons_enabled\1\nsetup\flualine\frequire\0" },
+    config = { "\27LJ\2\n�\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\tleft\n • \nright\n • \25component_separators\1\0\2\tleft\n • \nright\n • \1\0\1\18icons_enabled\1\nsetup\flualine\frequire\0" },
     loaded = true,
     path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
@@ -144,6 +144,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  neovim = {
+    loaded = true,
+    path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neovim",
+    url = "https://github.com/rose-pine/neovim"
   },
   ["note.nvim"] = {
     loaded = true,
@@ -186,6 +191,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\poimandres.nvim",
     url = "https://github.com/olivercederborg/poimandres.nvim"
   },
+  ["telescope-file-browser.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope-file-browser.nvim",
+    url = "https://github.com/nvim-telescope/telescope-file-browser.nvim"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
@@ -196,16 +206,16 @@ _G.packer_plugins = {
     path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\transparent.nvim",
     url = "https://github.com/xiyaowong/transparent.nvim"
   },
+  ["tree-sitter-asm"] = {
+    loaded = true,
+    path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\tree-sitter-asm",
+    url = "https://github.com/rush-rs/tree-sitter-asm"
+  },
   ["trouble.nvim"] = {
     config = { "\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0" },
     loaded = true,
     path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
-  },
-  ["vim-fugitive"] = {
-    loaded = true,
-    path = "C:\\Users\\Dell\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-fugitive",
-    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vscode.nvim"] = {
     loaded = true,
@@ -215,18 +225,18 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\tleft\n • \nright\n • \25component_separators\1\0\2\tleft\b < \nright\b > \1\0\1\18icons_enabled\1\nsetup\flualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
--- Config for: trouble.nvim
-time([[Config for trouble.nvim]], true)
-try_loadstring("\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
-time([[Config for trouble.nvim]], false)
 -- Config for: nvim-autopairs
 time([[Config for nvim-autopairs]], true)
 try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
 time([[Config for nvim-autopairs]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\nC\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\nicons\1\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n�\1\0\0\5\0\n\0\r6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\b\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\3=\3\t\2B\0\2\1K\0\1\0\foptions\1\0\0\23section_separators\1\0\2\tleft\n • \nright\n • \25component_separators\1\0\2\tleft\n • \nright\n • \1\0\1\18icons_enabled\1\nsetup\flualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

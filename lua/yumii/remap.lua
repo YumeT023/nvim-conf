@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- using ctrl + arrow to switch between different panel
 vim.keymap.set("n", "<C-Right>", "<C-w>l", { silent = true })
@@ -16,6 +15,8 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 
 -- split
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set("n", "<leader>vs", ":vsplit<cr><C-w>l")
 vim.keymap.set("n", "<leader>sp", ":split<cr><C-w>j")
 

@@ -13,6 +13,13 @@ return require("packer").startup(function(use)
     requires = { { "nvim-lua/plenary.nvim" } }
   }
 
+  -- packer
+
+  use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+  }
+
   use({
     "folke/trouble.nvim",
     config = function()
@@ -26,6 +33,8 @@ return require("packer").startup(function(use)
   })
 
   use("theprimeagen/harpoon")
+
+  use("rose-pine/neovim")
 
   use {
     "VonHeikemen/lsp-zero.nvim",
@@ -63,7 +72,7 @@ return require("packer").startup(function(use)
       require("lualine").setup {
         options = {
           icons_enabled = false,
-          component_separators = { left = " < ", right = " > " },
+          component_separators = { left = " • ", right = " • " },
           section_separators = { left = " • ", right = " • " },
         }
       }
@@ -72,10 +81,14 @@ return require("packer").startup(function(use)
 
   use {
     "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate"
+    run = ":TSUpdate",
+    commit = "fef26b5eeee1dca1699639dd0d76c47f15a45ee6"
   }
 
-  use("tpope/vim-fugitive")
+  use {
+    "rush-rs/tree-sitter-asm"
+  }
+
   use("CRAG666/code_runner.nvim")
   use("gsuuon/note.nvim")
 

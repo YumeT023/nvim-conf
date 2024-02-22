@@ -1,15 +1,14 @@
 local lsp = require("lsp-zero")
-local lspconfig = require("lspconfig");
 
 lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
   'lua_ls',
-  'clangd',
   'prismals',
   'html',
-  'rust_analyzer'
+  'rust_analyzer',
+  'jdtls'
 })
 
 lsp.nvim_workspace() -- Fix Undefined global 'vim'
@@ -40,18 +39,6 @@ lsp.set_preferences({
   }
 })
 
-lsp.format_on_save({
-  format_opts = {
-    async = false,
-    timeout_ms = 10000
-  },
-  servers = {
-    ['lua_ls'] = { 'lua' },
-    ['tsserver'] = { 'typescript', 'typescriptreact', 'javascript', 'javascriptreact' },
-    ['clangd'] = { 'c', 'cpp' },
-  }
-})
-
 lsp.on_attach(function(_, bufnr)
   local opts = { buffer = bufnr, remap = false }
 
@@ -66,13 +53,17 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+-- mason lsp
+require("mason-lspconfig").setup({
+  handlers = {
+    lsp.default_setup,
+    rust_analyzer = function()
+    end
+  }
+})
+
+lsp.setup()
+
 vim.diagnostic.config({
   virtual_text = true
 })
-
-lspconfig['clangd'].setup {
-  filetypes = { "h", "c", "cpp", "objtc", "objtcpp" },
-  cmd = { "clangd", "--background-index" },
-}
-
-lsp.setup()
