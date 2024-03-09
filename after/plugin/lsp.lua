@@ -8,7 +8,8 @@ lsp.ensure_installed({
   'prismals',
   'html',
   'rust_analyzer',
-  'jdtls'
+  'jdtls',
+  'tailwindcss-language-server',
 })
 
 lsp.nvim_workspace() -- Fix Undefined global 'vim'
@@ -37,6 +38,8 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "W", function() vim.lsp.buf.workspace_symbol() end, opts)
   vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
   vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+  vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+  vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
 end)
 
 -- mason lsp

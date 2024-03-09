@@ -5,7 +5,7 @@ require("rose-pine").setup {
 }
 
 function SetupColorTheme(color)
-  color = color or "github_dark_colorblind"
+  color = color or "github_dark_tritanopia"
   vim.cmd.colorscheme(color)
   -- vim.api.nvim_command(':TransparentEnable')
 end

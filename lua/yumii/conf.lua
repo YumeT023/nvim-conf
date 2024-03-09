@@ -21,3 +21,5 @@ vim.opt.incsearch = true -- search highlight updates incrementally
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
+
+vim.opt.fileformats='dos'
