@@ -9,7 +9,8 @@ lsp.ensure_installed({
   'html',
   'rust_analyzer',
   'jdtls',
-  'tailwindcss-language-server',
+  'tailwindcss',
+  'volar'
 })
 
 lsp.nvim_workspace() -- Fix Undefined global 'vim'
