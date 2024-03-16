@@ -2,17 +2,6 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'lua_ls',
-  'prismals',
-  'html',
-  'rust_analyzer',
-  'jdtls',
-  'tailwindcss',
-  'volar'
-})
-
 lsp.nvim_workspace() -- Fix Undefined global 'vim'
 
 local cmp = require('cmp')
@@ -43,17 +32,49 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("n", "gi", function() vim.lsp.buf.implementation() end, opts)
 end)
 
+lsp.setup()
+
 -- mason lsp
+local conf = require("lspconfig")
+
 require("mason-lspconfig").setup({
+  ensure_installed = {
+    'tsserver',
+    'lua_ls',
+    'prismals',
+    'html',
+    'rust_analyzer',
+    'jdtls',
+    'tailwindcss',
+    'volar'
+  },
   handlers = {
     lsp.default_setup,
     rust_analyzer = function()
+    end,
+    tsserver = function()
+      local global_pkg = "C:/Program Files/nodejs/node_modules"
+      conf.tsserver.setup {
+        filetypes = {"vue", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx"},
+        root_dir = conf.util.root_pattern("package.json"),
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = string.format("%s/%s", global_pkg, "@vue/typescript-plugin"),
+              languages = {"vue"}
+            }
+          }
+        }
+      }
     end
   }
 })
 
-lsp.setup()
-
 vim.diagnostic.config({
   virtual_text = true
 })
+
+
+
+
