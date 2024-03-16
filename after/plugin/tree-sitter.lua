@@ -2,8 +2,6 @@ require("nvim-treesitter.configs").setup {
   ensure_installed = {
     "query",
     "lua",
-    "vim",
-    "vimdoc",
     "javascript",
     "typescript",
     "tsx",
@@ -11,7 +9,6 @@ require("nvim-treesitter.configs").setup {
     "css",
     "prisma",
     "rust",
-    "c",
     "asm",
   },
 
