@@ -1,0 +1,5 @@
+require("config.lazy")
+require("config.filetype")
+require("config.remap")
+require("config.ui")
+require("config.pkgs")
